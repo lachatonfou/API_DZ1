@@ -23,6 +23,7 @@ dependencies {
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    implementation 'io.qameta.allure:allure-rest-assured:2.27.0'
 }
 
 test {
