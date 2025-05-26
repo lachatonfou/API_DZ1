@@ -3,6 +3,7 @@ package controller;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import models.User;
+import testData.TestData;
 
 import static constants.CommonConstants.BASE_URI;
 import static io.restassured.RestAssured.given;
@@ -34,8 +35,9 @@ public class UserController {
                     .andReturn();
     }
 
-    public Response updateUser (String username) {
+    public Response updateUser (String username, User user) {
         return given(this.requestSpecification)
+                    .body(user)
                 .when()
                     .put(USER_ENDPOINT + "/" + username)
                     .andReturn();
